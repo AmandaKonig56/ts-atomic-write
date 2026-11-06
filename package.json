@@ -1,6 +1,6 @@
 {
   "name": "ts-atomic-write",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Atomically write a file so readers never observe a partial write.",
   "type": "module",
   "main": "src/index.js",
