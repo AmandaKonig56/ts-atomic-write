@@ -44,3 +44,10 @@ Returns a `Promise<void>`.
   include random bytes to avoid collisions.
 - The temporary file is flushed with `fsync` before the rename, so a crash
   after the rename does not leave a file with unflushed content.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
